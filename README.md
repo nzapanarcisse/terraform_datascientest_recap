@@ -1,3 +1,6 @@
+<img width="557" alt="image" src="https://github.com/user-attachments/assets/72d2b1c4-1deb-4eab-9795-e116f27e6af5">
+
+
 # Projet de Migration Cloud pour Proven-FR
 
 L'entreprise Proven-FR souhaite migrer son infrastructure vers le cloud. Pour ce faire, elle a fait appel à un architecte AWS afin qu'il propose une architecture cloud garantissant la résilience, la scalabilité et surtout la sécurité de ses applications.
