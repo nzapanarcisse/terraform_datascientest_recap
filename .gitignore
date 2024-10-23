@@ -1,0 +1,10 @@
+# General
+.vagrant/
+ansible/roles/geerlingguy.pip/
+ansible/roles/geerlingguy.docker/
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate.backup
+terraform.tfstate
+
+.idea/
