@@ -115,15 +115,15 @@ module "eip" {
 }
 
 # Création de l'EC2
-# module "ec2" {
-#   source        = "./modules/ec2"
-#   instance_type = "t2.small"
-#   public_ip     = module.eip.output_eip
-#   sg_id       = module.sg.output_sg_id
-#   subnet_id     = aws_subnet.public_subnet.id
-#   server_name   = "public_server"
-#
-# }
+module "ec2" {
+  source        = "./modules/ec2"
+  instance_type = "t2.small"
+  public_ip     = module.eip.output_eip
+  sg_id       = module.sg.output_sg_id
+  subnet_id     = aws_subnet.public_subnet.id
+  server_name   = "public_server"
+
+}
 
 module "priv_ec2" {
   source        = "./modules/ec2"
@@ -135,7 +135,7 @@ module "priv_ec2" {
 
 }
 #Creation des associations nécessaires
-# resource "aws_eip_association" "eip_assoc" {
-#   instance_id   = module.ec2.output_ec2_id
-#   allocation_id = module.eip.output_eip_id
-# }
+resource "aws_eip_association" "eip_assoc" {
+  instance_id   = module.ec2.output_ec2_id
+  allocation_id = module.eip.output_eip_id
+}
