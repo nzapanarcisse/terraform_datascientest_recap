@@ -58,7 +58,7 @@ Chaque module contiendra trois fichiers principaux :
 - `outputs.tf`: Définit les sorties du module qui peuvent être utilisées par d'autres modules ou par la configuration principale.
 ### Fichier `main.tf` de l'Application Principale
 
-Ce fichier est utilisé pour créer le VPC, les sous-réseaux et d'autres ressources globales. Voici un exemple simplifié :
+Ce fichier est utilisé pour créer le VPC, les sous-réseaux et d'autres ressources globales. Et fait appel au module pour créer les instances EC2,des Groupes de sécurité ... :
 
 ```hcl
 provider "aws" {
@@ -202,3 +202,20 @@ resource "aws_eip_association" "eip_assoc" {
   instance_id   = module.ec2.output_ec2_id
   allocation_id = module.eip.output_eip_id
 }
+
+
+## Commandes Terraform à Exécuter
+
+1. **Initialiser le projet** :
+   ```bash
+   terraform init
+
+2. **Planifier l'infrastructure** :
+    ```bash
+   terraform plan
+3. **Appliquer les changements** :
+    ```bash
+   terraform apply
+4. **Destruction de l'infrastructure** :
+    ```bash
+   terraform destroy
