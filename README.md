@@ -234,7 +234,8 @@ Pour communiquer avec AWS et effectuer des actions programmatiques, vous devez r
    - Vous pouvez configurer vos clés d'accès dans votre environnement local en utilisant AWS CLI ou directement dans votre code Terraform.
    - sur votre terminale :
      ```bash
-   export AWS_ACCESS_KEY_ID=
+   export AWS_ACCESS_KEY_ID=```
+   ```bash
    export AWS_SECRET_ACCESS_KEY=```
 
 #### Exemples de configuration avec AWS CLI
