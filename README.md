@@ -240,8 +240,7 @@ Pour communiquer avec AWS et effectuer des actions programmatiques, vous devez r
 #### Exemples de configuration avec AWS CLI
 
 Vous pouvez configurer vos clés d'accès en utilisant la commande suivante :
-```bash
-   aws configure```
+
 
 ## Récupération de la Paire de Clés SSH
 
