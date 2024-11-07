@@ -243,6 +243,7 @@ Vous pouvez configurer vos clés d'accès en utilisant la commande suivante :
 
 ```bash
  aws configure```
+
 ## Récupération de la Paire de Clés SSH
 
 Pour se connecter à vos instances EC2 par SSH, vous devez créer et télécharger une **paire de clés SSH**. Voici les étapes à suivre :
