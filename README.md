@@ -233,9 +233,8 @@ Pour communiquer avec AWS et effectuer des actions programmatiques, vous devez r
 5. **Configurer votre environnement** :
    - Vous pouvez configurer vos clés d'accès dans votre environnement local en utilisant AWS CLI ou directement dans votre code Terraform.
    - sur votre terminale :
-     ```bash
-   export AWS_ACCESS_KEY_ID=```
    ```bash
+   export AWS_ACCESS_KEY_ID=
    export AWS_SECRET_ACCESS_KEY=```
 
 #### Exemples de configuration avec AWS CLI
@@ -243,7 +242,7 @@ Pour communiquer avec AWS et effectuer des actions programmatiques, vous devez r
 Vous pouvez configurer vos clés d'accès en utilisant la commande suivante :
 
 ```bash
-aws configure
+aws configure```
 ## Récupération de la Paire de Clés SSH
 
 Pour se connecter à vos instances EC2 par SSH, vous devez créer et télécharger une **paire de clés SSH**. Voici les étapes à suivre :
@@ -277,11 +276,11 @@ Pour se connecter à vos instances EC2 par SSH, vous devez créer et télécharg
    terraform init```
 
 2. **Planifier l'infrastructure** :
-    ```bash
+   ```bash
    terraform plan```
 3. **Appliquer les changements** :
-    ```bash
+   ```bash
    terraform apply```
 4. **Destruction de l'infrastructure** :
-    ```bash
+   ```bash
    terraform destroy```
