@@ -202,20 +202,20 @@ resource "aws_eip_association" "eip_assoc" {
   instance_id   = module.ec2.output_ec2_id
   allocation_id = module.eip.output_eip_id
 }
-
+```
 
 ## Commandes Terraform à Exécuter
 
 1. **Initialiser le projet** :
    ```bash
-   terraform init
+   terraform init```
 
 2. **Planifier l'infrastructure** :
     ```bash
-   terraform plan
+   terraform plan```
 3. **Appliquer les changements** :
     ```bash
-   terraform apply
+   terraform apply```
 4. **Destruction de l'infrastructure** :
     ```bash
-   terraform destroy
+   terraform destroy```
