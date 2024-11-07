@@ -203,6 +203,71 @@ resource "aws_eip_association" "eip_assoc" {
   allocation_id = module.eip.output_eip_id
 }
 ```
+## configuration de son environnement pour communiquer avec aws:
+### Récupération de la Clé d'Accès AWS
+
+Pour communiquer avec AWS et effectuer des actions programmatiques, vous devez récupérer vos **clés d'accès**. Ces clés sont essentielles pour authentifier vos requêtes API vers AWS. Voici comment procéder :
+
+1. **Connectez-vous à la console AWS** :
+   - Allez sur [AWS Management Console](https://aws.amazon.com/console/).
+   - Connectez-vous avec vos identifiants.
+
+2. **Accédez à la section IAM** :
+   - Dans la console, recherchez et sélectionnez **IAM** (Identity and Access Management).
+    ![image](https://github.com/user-attachments/assets/48c65c02-3854-4e5e-90fe-fd641ba6d133)
+
+3. **Gérez les utilisateurs** :
+   - Cliquez sur **Users** dans le volet de navigation.
+   - Sélectionnez l'utilisateur pour lequel vous souhaitez créer des clés d'accès. Si vous n'avez pas encore d'utilisateur, créez-en un.
+      ![image](https://github.com/user-attachments/assets/b2670833-e95a-4d8f-a317-773425bd411c)
+
+4. **Créer des clés d'accès** :
+   - Dans l'onglet **Security credentials**, faites défiler vers le bas jusqu'à la section **Access keys**.
+   - Cliquez sur **Create access key**.
+   - Une nouvelle clé d'accès sera générée. Notez bien la **Access Key ID** et la **Secret Access Key**. 
+  ![image](https://github.com/user-attachments/assets/7b502b0d-bd2e-4227-af26-b7ecbc335e60)
+
+
+   > **Important** : Conservez ces informations en lieu sûr. Vous ne pourrez pas récupérer la **Secret Access Key** après avoir quitté la page.
+
+5. **Configurer votre environnement** :
+   - Vous pouvez configurer vos clés d'accès dans votre environnement local en utilisant AWS CLI ou directement dans votre code Terraform.
+   - sur votre terminale :
+     ```bash
+   export AWS_ACCESS_KEY_ID=
+   export AWS_SECRET_ACCESS_KEY=```
+
+#### Exemples de configuration avec AWS CLI
+
+Vous pouvez configurer vos clés d'accès en utilisant la commande suivante :
+
+```bash
+aws configure
+## Récupération de la Paire de Clés SSH
+
+Pour se connecter à vos instances EC2 par SSH, vous devez créer et télécharger une **paire de clés SSH**. Voici les étapes à suivre :
+
+1. **Connectez-vous à la console AWS** :
+   - Rendez-vous sur [AWS Management Console].
+   - Connectez-vous avec vos identifiants.
+
+2. **Accédez à la section EC2** :
+   - Dans la console, recherchez et sélectionnez **EC2**.
+
+3. **Créer une paire de clés** :
+   - Dans le volet de navigation, cliquez sur **Key Pairs** sous la section **Network & Security**.
+   - Cliquez sur le bouton **Create key pair**.
+   - Donnez un nom à votre paire de clés (par exemple, `my-key-pair`).
+
+4. **Télécharger la clé** :
+   - Choisissez le format de fichier (`.pem` pour Linux/Mac ou `.ppk` pour Windows avec PuTTY).
+   - Cliquez sur **Create** pour générer votre paire de clés.
+   - Le fichier de clé privée sera automatiquement téléchargé. **Conservez-le en lieu sûr**, car vous ne pourrez pas le récupérer plus tard.
+
+5. **Configurer les permissions de la clé** (pour Linux/Mac) :
+   - Ouvrez un terminal et exécutez la commande suivante pour restreindre l'accès à votre clé :
+   ```bash
+   chmod 400 /path/to/your/my-key-pair.pem
 
 ## Commandes Terraform à Exécuter
 
